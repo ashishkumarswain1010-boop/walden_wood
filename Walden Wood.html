@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Walden Wood Eco Retreat | Book direct</title>
+<meta name="description" content="Forest cabins, farm-table dinners and quiet mornings. Book directly with Walden Wood Eco Retreat.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+:root{--ink:#12231b;--moss:#2f5d46;--fern:#4f8a62;--lichen:#d5e0c3;--paper:#f5f6f0;--lantern:#e9a23b;--bark:#6b4f3a;
+--bs-body-font-family:'DM Sans',sans-serif;--bs-body-color:#24352c;--bs-body-bg:var(--paper)}
+html{scroll-behavior:smooth}body{font-size:1.02rem;line-height:1.65}
+h1,h2,h3,h4,.brand{font-family:'Fraunces',serif;color:var(--ink);letter-spacing:-.01em}
+h2{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:500;line-height:1.1}
+a{color:var(--moss)}.lead-s{max-width:34rem}
+:focus-visible{outline:3px solid var(--lantern);outline-offset:2px}
+.btn{border-radius:999px;font-weight:700;padding:.7rem 1.5rem}
+.btn-lantern{background:var(--lantern);color:#2a1c05;border:0}.btn-lantern:hover{background:#f2b556;color:#2a1c05}
+.btn-moss{background:var(--moss);color:#fff;border:0}.btn-moss:hover{background:var(--ink);color:#fff}
+.btn-line{border:1.5px solid currentColor;color:inherit}
+/* nav */
+.navbar{transition:background .3s,box-shadow .3s;padding:1rem 0}
+.navbar.solid{background:rgba(18,35,27,.94);backdrop-filter:blur(8px);padding:.55rem 0}
+.brand{color:#fff!important;font-size:1.35rem;font-weight:600;text-decoration:none}.brand small{display:block;font:500 .68rem 'DM Sans';opacity:.8;letter-spacing:.06em}
+.nav-link{color:#fff!important;opacity:.9;font-weight:500}.nav-link:hover{opacity:1;text-decoration:underline;text-underline-offset:6px}
+.navbar-toggler{border-color:rgba(255,255,255,.5)}.navbar-toggler-icon{filter:invert(1)}
+/* hero */
+.hero{position:relative;min-height:calc(100vh - 4rem);min-height:calc(100svh - 4rem);overflow:hidden;color:#fff;display:flex;align-items:center}
+#sky{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2000&q=90') center/cover no-repeat}
+#sun{position:absolute;width:clamp(70px,9vw,130px);aspect-ratio:1;border-radius:50%;filter:blur(1px);box-shadow:0 0 90px 40px var(--glow,#ffd58a66);transition:none}
+#forest{display:none}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,22,16,.55),rgba(10,22,16,0) 65%);pointer-events:none}
+.hero .wrap{position:relative;z-index:2;padding-top:5rem;padding-bottom:9rem}
+.hero h1{color:#fff;font-size:clamp(2.6rem,7vw,5.6rem);font-weight:400;line-height:1;max-width:11ch;text-shadow:0 2px 24px rgba(0,0,0,.25)}
+.hero p{max-width:30rem;font-size:1.15rem;text-shadow:0 1px 12px rgba(0,0,0,.3)}
+.time{margin-top:2rem;max-width:22rem;background:rgba(10,22,16,.38);backdrop-filter:blur(6px);border-radius:1rem 1rem 1rem .25rem;padding:.8rem 1.1rem}
+.time label{display:flex;justify-content:space-between;font-size:.85rem;font-weight:500}
+input[type=range]{width:100%;accent-color:var(--lantern)}
+/* booking bar */
+.book{position:relative;z-index:5;margin-top:-4.5rem}
+.bar{background:#fff;border-radius:1.5rem;box-shadow:0 24px 60px -20px rgba(18,35,27,.45);padding:1.2rem 1.4rem}
+.bar .form-label{font-size:.78rem;font-weight:700;color:var(--moss);margin-bottom:.1rem}
+.bar .form-control,.bar .form-select{border:0;border-bottom:1.5px solid var(--lichen);border-radius:0;padding-left:0;background-color:transparent;font-weight:500}
+.bar .form-control:focus,.bar .form-select:focus{box-shadow:none;border-color:var(--moss)}
+/* sections */
+.sec{padding:6.5rem 0}
+.room{background:#fff;border-radius:1.75rem 1.75rem .5rem 1.75rem;overflow:hidden;height:100%;display:flex;flex-direction:column;transition:transform .35s,box-shadow .35s}
+.room:hover{transform:translateY(-6px);box-shadow:0 26px 50px -24px rgba(18,35,27,.5)}
+.ph{height:230px;background:var(--img,none) center/cover,var(--g);position:relative}
+.ph svg{position:absolute;inset:auto 0 0 0;width:100%;opacity:.9}
+.room .b{padding:1.4rem 1.5rem 1.6rem;display:flex;flex-direction:column;flex:1}
+.room ul{list-style:none;padding:0;margin:.6rem 0 1.2rem;display:flex;flex-wrap:wrap;gap:.4rem}
+.room li{font-size:.8rem;background:var(--lichen);color:var(--ink);border-radius:999px;padding:.15rem .7rem}
+.price{font-family:'Fraunces';font-size:1.7rem;color:var(--ink)}.price small{font:400 .85rem 'DM Sans';color:#5d6e64}
+.exp{background:var(--ink);color:#dbe6dc}
+.exp h2,.exp h3{color:#fff}
+.accordion{--bs-accordion-bg:transparent;--bs-accordion-border-color:rgba(255,255,255,.18);--bs-accordion-btn-color:#fff;--bs-accordion-active-color:var(--lantern);--bs-accordion-active-bg:transparent;--bs-accordion-color:#c4d3c7;--bs-accordion-btn-focus-box-shadow:none}
+.accordion-button{font-family:'Fraunces';font-size:1.35rem;background:transparent!important;padding:1.3rem 0}
+.accordion-button:after{filter:invert(1)}.accordion-item{border-width:0 0 1px}
+.accordion-body{padding:0 0 1.4rem}
+.eco{background:var(--lichen)}
+.fact{border-left:3px solid var(--moss);padding-left:1rem}.fact b{font-family:'Fraunces';font-size:2.2rem;display:block;color:var(--ink);line-height:1.1}
+.offer{border-radius:1.5rem;padding:2rem;height:100%;position:relative;overflow:hidden}
+.offer.a{background:var(--moss);color:#e7f0e6}.offer.b{background:#fff;border:1.5px dashed var(--fern)}
+.offer h3{font-size:1.7rem}.offer.a h3{color:#fff}
+.gallery-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:200px;gap:1rem}
+.gallery-grid figure{margin:0;border-radius:1.25rem;overflow:hidden}
+.gallery-grid figure:nth-child(1){grid-column:span 7;grid-row:span 2}
+.gallery-grid figure:nth-child(2){grid-column:span 5}
+.gallery-grid figure:nth-child(3){grid-column:span 5}
+.gallery-grid figure:nth-child(4){grid-column:span 4}
+.gallery-grid figure:nth-child(5){grid-column:span 4}
+.gallery-grid figure:nth-child(6){grid-column:span 4}
+.gallery-grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.gallery-grid figure:hover img{transform:scale(1.03)}
+@media(max-width:767px){.gallery-grid{grid-template-columns:1fr 1fr;grid-auto-rows:170px}.gallery-grid figure:nth-child(n){grid-column:span 1;grid-row:span 1}.gallery-grid figure:nth-child(1){grid-column:span 2}}
+.code{display:inline-flex;align-items:center;gap:.6rem;border:1.5px dashed currentColor;border-radius:.6rem;padding:.3rem .5rem .3rem .9rem;font-weight:700;letter-spacing:.08em}
+.code button{border:0;background:var(--lantern);color:#2a1c05;border-radius:.4rem;font-size:.78rem;font-weight:700;padding:.25rem .6rem}
+.quote{font-family:'Fraunces';font-size:clamp(1.4rem,3vw,2.1rem);line-height:1.3;color:var(--ink);max-width:46rem}
+.carousel-indicators [data-bs-target]{background:var(--moss)}
+footer{background:var(--ink);color:#aebdb1;padding:3.5rem 0 2rem}footer a{color:#dbe6dc}
+.contact .form-control{border-radius:.9rem;padding:.8rem 1rem;border-color:#cfd9c9}
+.est td{padding:.3rem 0}.est tr.t td{border-top:1.5px solid var(--lichen);padding-top:.6rem;font-weight:700;font-size:1.15rem;color:var(--ink)}
+.wa{position:fixed;right:1.1rem;bottom:1.1rem;z-index:20;opacity:0;pointer-events:none;transition:opacity .3s;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+body.scrolled .wa{opacity:1;pointer-events:auto}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+@media(max-width:991px){.navbar-collapse{background:var(--ink);border-radius:1rem;padding:1rem;margin-top:.6rem}.sec{padding:4.5rem 0}.hero .wrap{padding-bottom:7rem}}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top" id="nav">
+ <div class="container">
+  <a class="brand" href="#top">Walden Wood<small>Eco Retreat</small></a>
+  <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Menu"><span class="navbar-toggler-icon"></span></button>
+  <div class="collapse navbar-collapse" id="menu">
+   <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+    <li class="nav-item"><a class="nav-link" href="#stay">Stay</a></li>
+    <li class="nav-item"><a class="nav-link" href="#experiences">Experiences</a></li>
+    <li class="nav-item"><a class="nav-link" href="#eco">Our footprint</a></li>
+    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+    <li class="nav-item"><a class="nav-link" href="#offers">Offers</a></li>
+    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+    <li class="nav-item ms-lg-2"><button class="btn btn-lantern btn-sm px-4" data-open-book>Book a stay</button></li>
+   </ul>
+  </div>
+ </div>
+</nav>
+
+<header class="hero" id="top">
+ <div id="sky"></div><div id="sun"></div>
+ <svg id="forest" viewBox="0 0 1600 500" preserveAspectRatio="xMidYMax slice" aria-hidden="true"></svg>
+ <div class="container wrap">
+  <h1>Sleep where the forest keeps time.</h1>
+  <p class="mt-3">Eleven timber cabins along a stream, dinners from our own farm, and mornings that start with birdsong instead of alarms.</p>
+  <div class="time">
+   <label for="tod"><span>Move the light</span><span id="todName">Midday</span></label>
+   <input type="range" id="tod" min="0" max="100" value="50" aria-label="Time of day">
+  </div>
+ </div>
+</header>
+
+<section class="book">
+ <div class="container">
+  <form class="bar" id="barForm" novalidate>
+   <div class="row g-3 align-items-end">
+    <div class="col-6 col-lg"><label class="form-label" for="ci">Check-in</label><input class="form-control" type="date" id="ci" required></div>
+    <div class="col-6 col-lg"><label class="form-label" for="co">Check-out</label><input class="form-control" type="date" id="co" required></div>
+    <div class="col-6 col-lg"><label class="form-label" for="gs">Guests</label><select class="form-select" id="gs"><option>1 guest</option><option selected>2 guests</option><option>3 guests</option><option>4 guests</option><option>5 guests</option></select></div>
+    <div class="col-6 col-lg"><label class="form-label" for="rm">Stay in</label><select class="form-select" id="rm"></select></div>
+    <div class="col-12 col-lg-auto"><button class="btn btn-moss w-100" type="submit">Check price</button></div>
+   </div>
+  </form>
+ </div>
+</section>
+
+<section class="sec" id="stay">
+ <div class="container">
+  <div class="row align-items-end mb-5 g-3"><div class="col-lg-6"><h2>Three ways to stay in the trees</h2></div><div class="col-lg-5 offset-lg-1"><p class="mb-0 lead-s">Every cabin is built from reclaimed timber, cooled by cross-breeze and lit by solar. Weekend nights cost 20% more.</p></div></div>
+  <div class="row g-4" id="rooms"></div>
+ </div>
+</section>
+
+<section class="sec exp" id="experiences">
+ <div class="container"><div class="row g-5">
+  <div class="col-lg-5"><h2 class="text-white">Days here have a slow rhythm</h2><p class="mt-3 lead-s">Pick one thing a day, or nothing at all. Most guests end up doing the first thing on this list and staying for the last.</p><button class="btn btn-lantern mt-3" data-open-book>Plan your days</button></div>
+  <div class="col-lg-6 offset-lg-1">
+   <div class="accordion" id="ex">
+    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#e1">Forest walk at first light</button></h3><div id="e1" class="accordion-collapse collapse show" data-bs-parent="#ex"><div class="accordion-body">A naturalist guides a 90-minute loop past the stream and the old sal grove. Binoculars and tea are provided. Included with every stay.</div></div></div>
+    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#e2">Dinner from the farm table</button></h3><div id="e2" class="accordion-collapse collapse" data-bs-parent="#ex"><div class="accordion-body">Vegetables picked that afternoon, cooked over wood fire. The menu changes with the harvest. Vegetarian and vegan by default.</div></div></div>
+    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#e3">Stream-side yoga</button></h3><div id="e3" class="accordion-collapse collapse" data-bs-parent="#ex"><div class="accordion-body">Gentle sessions at sunrise and sunset on the bamboo deck, for all levels. Mats provided.</div></div></div>
+    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#e4">Stargazing deck</button></h3><div id="e4" class="accordion-collapse collapse" data-bs-parent="#ex"><div class="accordion-body">Lights go low after 9 pm so the sky can take over. Telescope and a short guided session on clear nights.</div></div></div>
+   </div>
+  </div>
+ </div></div>
+</section>
+
+<section class="sec eco" id="eco">
+ <div class="container">
+  <div class="row g-5 align-items-center">
+   <div class="col-lg-5"><h2>Gentle on the land, by design</h2><p class="mt-3">We measure what we use and publish it every year, so you can see what your stay actually costs the forest.</p></div>
+   <div class="col-lg-7"><div class="row g-4">
+    <div class="col-sm-4"><div class="fact"><b data-n="100">0</b>of hot water heated by the sun</div></div>
+    <div class="col-sm-4"><div class="fact"><b data-n="85">0</b>of used water recycled on site</div></div>
+    <div class="col-sm-4"><div class="fact"><b data-n="2400" data-plain>0</b>native trees planted since opening</div></div>
+   </div><p class="small mt-4 mb-0 text-body-secondary">Sample figures. Replace with the resort's verified numbers.</p></div>
+  </div>
+ </div>
+</section>
+
+ <section class="sec pt-0" id="gallery">
+  <div class="container">
+   <div class="row align-items-end mb-5 g-3"><div class="col-lg-7"><h2>Life around Walden Wood</h2></div><div class="col-lg-5"><p class="mb-0 lead-s">A few moments from the forest, the table and the water.</p></div></div>
+   <div class="gallery-grid">
+    <figure><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1400&q=85" alt="Forest landscape" loading="lazy"></figure>
+    <figure><img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=900&q=85" alt="Timber cabin" loading="lazy"></figure>
+    <figure><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85" alt="Seasonal meal" loading="lazy"></figure>
+    <figure><img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=700&q=85" alt="Nature deck" loading="lazy"></figure>
+    <figure><img src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=700&q=85" alt="Night sky" loading="lazy"></figure>
+    <figure><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=700&q=85" alt="Pool and forest" loading="lazy"></figure>
+   </div>
+  </div>
+ </section>
+
+<section class="sec" id="offers">
+ <div class="container">
+  <h2 class="mb-5">Book direct, stay for less</h2>
+  <div class="row g-4">
+   <div class="col-md-6"><div class="offer a"><h3>Winter Escape</h3><p>Stay three nights between 1 December and 31 January and take 15% off the room rate. Late checkout until 2 pm.</p><span class="code" data-copy>WINTER15 <button type="button">Copy</button></span></div></div>
+   <div class="col-md-6"><div class="offer b"><h3>First time with us</h3><p>Welcome 10% off your first direct booking, plus a jar of our forest honey waiting in the cabin.</p><span class="code text-success" data-copy>FOREST10 <button type="button">Copy</button></span></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec pt-0">
+ <div class="container">
+  <div id="rev" class="carousel slide" data-bs-ride="carousel" data-bs-interval="7000">
+   <div class="carousel-inner pb-5">
+    <div class="carousel-item active"><p class="quote">“We switched off our phones on the first evening and honestly forgot to switch them back on.”</p><p class="mt-3 mb-0">Ananya R., Bengaluru, stayed in the Canopy Cabin</p></div>
+    <div class="carousel-item"><p class="quote">“The farm dinner was the best meal of our trip, and the kids learned to name six birds.”</p><p class="mt-3 mb-0">The Mishra family, Kolkata, stayed in the Brook Villa</p></div>
+    <div class="carousel-item"><p class="quote">“Falling asleep to the stream, waking up level with the treetops. Booking again for our anniversary.”</p><p class="mt-3 mb-0">Karan and Leela, Hyderabad, stayed in the Treetop Loft</p></div>
+   </div>
+   <div class="carousel-indicators position-static justify-content-start ms-0 mb-0"><button data-bs-target="#rev" data-bs-slide-to="0" class="active" aria-label="Review 1"></button><button data-bs-target="#rev" data-bs-slide-to="1" aria-label="Review 2"></button><button data-bs-target="#rev" data-bs-slide-to="2" aria-label="Review 3"></button></div>
+  </div>
+  <p class="small text-body-secondary mt-3 mb-0">Sample reviews for design purposes.</p>
+ </div>
+</section>
+
+<section class="sec contact pt-0" id="contact">
+ <div class="container"><div class="row g-5">
+  <div class="col-lg-5"><h2>Ask us anything</h2><p class="mt-3">Not sure which cabin suits your group, or planning a small celebration? Write to us and we will reply within a day.</p>
+   <p class="mb-1"><strong>Walden Wood Eco Retreat</strong><br>Forest Road, Odisha, India</p><p>+91 00000 00000<br><a href="mailto:stay@waldenwoodsecoretreat.com">stay@waldenwoodsecoretreat.com</a></p></div>
+  <div class="col-lg-6 offset-lg-1"><form id="enq" novalidate>
+   <div class="row g-3"><div class="col-sm-6"><input class="form-control" placeholder="Your name" required aria-label="Name"></div><div class="col-sm-6"><input class="form-control" type="tel" placeholder="Phone or WhatsApp" required aria-label="Phone"></div>
+   <div class="col-12"><textarea class="form-control" rows="4" placeholder="Dates, group size, anything special" required aria-label="Message"></textarea></div>
+   <div class="col-12"><button class="btn btn-moss" type="submit">Send enquiry</button></div></div></form></div>
+ </div></div>
+</section>
+
+<footer><div class="container d-flex flex-wrap justify-content-between gap-2"><span>&copy; 2026 Walden Wood Eco Retreat</span><span>Website by <a href="https://sonydig.com">Sonydig Technology</a></span></div></footer>
+
+<a class="btn btn-lantern wa" href="https://wa.me/910000000000" target="_blank" rel="noopener">Chat on WhatsApp</a>
+
+<!-- booking modal -->
+<div class="modal fade" id="bm" tabindex="-1" aria-labelledby="bmT" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content" style="border-radius:1.5rem">
+ <div class="modal-header border-0 pb-0"><h3 class="modal-title" id="bmT">Your stay</h3><button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+ <div class="modal-body" id="bmBody"></div>
+</div></div></div>
+
+<div class="toast-container position-fixed top-0 end-0 p-3" style="z-index:2000"><div id="toast" class="toast text-bg-success border-0" role="status"><div class="toast-body" id="toastB"></div></div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+(()=>{
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const ROOMS=[
+ {id:'canopy',name:'Canopy Cabin',rate:7800,desc:'A timber cabin with a wide deck over the stream. Sleeps up to 3.',tags:['King bed','Stream deck','Breakfast'],g:'linear-gradient(160deg,#9ec5a4,#3f6b4a)',img:'https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1000&q=85'},
+ {id:'brook',name:'Brook Villa',rate:12500,desc:'Two bedrooms, a living room and a private plunge pool. Sleeps up to 5.',tags:['2 bedrooms','Plunge pool','Breakfast'],g:'linear-gradient(160deg,#e9c98a,#8a6a3a)',img:'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1000&q=85'},
+ {id:'loft',name:'Treetop Loft',rate:16800,desc:'Raised among the canopy with glass on three sides. Sleeps 2.',tags:['Glass walls','Soaking tub','Dinner incl.'],g:'linear-gradient(160deg,#7fa7b8,#2a4a5a)',img:'https://images.unsplash.com/photo-1542718610-a1d656d1884c?auto=format&fit=crop&w=1000&q=85'}];
+const COUPONS={WINTER15:.15,FOREST10:.10},TAX=.12;
+const inr=n=>'₹'+Math.round(n).toLocaleString('en-IN');
+/* rooms */
+$('#rooms').innerHTML=ROOMS.map(r=>`<div class="col-md-6 col-lg-4"><article class="room"><div class="ph" style="--g:${r.g};--img:url('${r.img}')"></div>
+<div class="b"><h3 class="h4">${r.name}</h3><p class="mb-0">${r.desc}</p><ul>${r.tags.map(t=>`<li>${t}</li>`).join('')}</ul>
+<div class="d-flex justify-content-between align-items-center mt-auto"><span class="price">${inr(r.rate)} <small>per night</small></span><button class="btn btn-moss btn-sm" data-room="${r.id}">Reserve</button></div></div></article></div>`).join('');
+$('#rm').innerHTML=ROOMS.map(r=>`<option value="${r.id}">${r.name}</option>`).join('');
+/* dates */
+const iso=d=>new Date(d.getTime()-d.getTimezoneOffset()*6e4).toISOString().slice(0,10);
+const t0=new Date(),d1=new Date(t0);d1.setDate(d1.getDate()+14);const d2=new Date(d1);d2.setDate(d2.getDate()+2);
+$('#ci').min=iso(t0);$('#ci').value=iso(d1);$('#co').value=iso(d2);
+$('#ci').onchange=()=>{const a=new Date($('#ci').value);const m=new Date(a);m.setDate(m.getDate()+1);$('#co').min=iso(m);if(new Date($('#co').value)<=a)$('#co').value=iso(m)};
+$('#ci').onchange();
+/* nav */
+const nav=$('#nav');addEventListener('scroll',()=>(nav.classList.toggle('solid',scrollY>40),document.body.classList.toggle('scrolled',scrollY>500)),{passive:true});
+$$('#menu a').forEach(a=>a.onclick=()=>bootstrap.Collapse.getInstance($('#menu'))?.hide());
+/* forest */
+const NS='http://www.w3.org/2000/svg',svg=$('#forest'),layers=[];
+function rnd(s){return()=>(s=(s*16807)%2147483647)/2147483647}
+[{n:34,h:[150,260],w:.42,s:7,c:'far'},{n:26,h:[190,330],w:.4,s:11,c:'mid'},{n:16,h:[260,430],w:.38,s:19,c:'near'}].forEach((L,i)=>{
+ const g=document.createElementNS(NS,'g'),r=rnd(L.s);let d='';
+ for(let k=0;k<L.n;k++){const x=-40+k*(1680/L.n)+r()*40,h=L.h[0]+r()*(L.h[1]-L.h[0]),w=h*L.w,y=500;
+  d+=`M${x} ${y-h}L${x+w*.28} ${y-h*.58}L${x-w*.28} ${y-h*.58}ZM${x} ${y-h*.8}L${x+w*.4} ${y-h*.32}L${x-w*.4} ${y-h*.32}ZM${x} ${y-h*.52}L${x+w*.52} ${y}L${x-w*.52} ${y}Z`}
+ const p=document.createElementNS(NS,'path');p.setAttribute('d',d+'M-50 500V470H1650V500Z');p.setAttribute('class',L.c);g.appendChild(p);svg.appendChild(g);layers.push(g)});
+const KF={top:['#2b3a5c','#6fb3d6','#1d2748'],bot:['#f6c58f','#e4f1e4','#e8985a'],far:['#7d8ea0','#86ad95','#505577'],mid:['#47695a','#4d8060','#303f58'],near:['#0f1c15','#173326','#0b1320'],sun:['#ffd9a0','#fff7d8','#ffb067']};
+const hx=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16)),mix=(a,b,t)=>a.map((v,i)=>Math.round(v+(b[i]-v)*t));
+function col(k,t){const a=KF[k],s=t<.5?[a[0],a[1],t*2]:[a[1],a[2],(t-.5)*2];return `rgb(${mix(hx(s[0]),hx(s[1]),s[2])})`}
+const names=['Dawn','Early morning','Midday','Golden hour','Dusk'];
+function light(v){const t=v/100;
+ $('#sky').style.background=`linear-gradient(${col('top',t)}aa,${col('bot',t)}66), url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2000&q=90') center/cover no-repeat`;
+ const s=$('#sun');s.style.background=col('sun',t);s.style.setProperty('--glow',col('sun',t).replace('rgb','rgba').replace(')',',.4)'));
+ s.style.left=(12+t*72)+'%';s.style.top=(62-Math.sin(Math.PI*t)*48)+'%';
+ svg.style.setProperty('--far',col('far',t));svg.style.setProperty('--mid',col('mid',t));svg.style.setProperty('--near',col('near',t));
+ $('#todName').textContent=names[Math.min(4,Math.floor(t*5))]}
+const st=document.createElement('style');st.textContent='#forest .far{fill:var(--far)}#forest .mid{fill:var(--mid)}#forest .near{fill:var(--near)}';document.head.appendChild(st);
+$('#tod').oninput=e=>light(+e.target.value);light(50);
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches)$('#top').addEventListener('mousemove',e=>{const x=e.clientX/innerWidth-.5;layers.forEach((g,i)=>g.style.transform=`translateX(${x*-(10+i*16)}px)`)});
+/* counters */
+const io=new IntersectionObserver((es,o)=>es.forEach(e=>{if(!e.isIntersecting)return;o.unobserve(e.target);const el=e.target,n=+el.dataset.n,pl='plain' in el.dataset;let s=null;
+ const f=ts=>{s??=ts;const p=Math.min((ts-s)/1400,1),v=Math.round(n*(1-Math.pow(1-p,3)));el.textContent=pl?v.toLocaleString('en-IN'):v+'%';if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)}),{threshold:.6});
+$$('[data-n]').forEach(el=>io.observe(el));
+/* booking */
+const bm=new bootstrap.Modal('#bm');
+function quote(room,a,b,code){const out=[];let sub=0;const n=Math.round((b-a)/864e5);
+ for(let i=0;i<n;i++){const d=new Date(a);d.setDate(d.getDate()+i);const wk=[5,6].includes(d.getDay());sub+=room.rate*(wk?1.2:1)}
+ const pct=COUPONS[code]||0,disc=sub*pct,tax=(sub-disc)*TAX;return{n,sub,pct,disc,tax,total:sub-disc+tax}}
+function openBook(roomId){
+ const room=ROOMS.find(r=>r.id===(roomId||$('#rm').value)),a=new Date($('#ci').value),b=new Date($('#co').value),g=$('#gs').value;
+ if(isNaN(a)||isNaN(b)||b<=a){$('#ci').focus();return toast('Choose a check-out date after check-in.',1)}
+ $('#rm').value=room.id;let code='';
+ const draw=()=>{const q=quote(room,a,b,code),f=d=>d.toLocaleDateString('en-IN',{weekday:'short',day:'numeric',month:'short'});
+  $('#bmBody').innerHTML=`<div class="row g-4"><div class="col-md-6"><p class="mb-1"><strong>${room.name}</strong></p><p class="text-body-secondary">${f(a)} to ${f(b)}, ${q.n} night${q.n>1?'s':''}, ${g}</p>
+  <table class="est w-100"><tr><td>Room (${inr(room.rate)} per night, weekends +20%)</td><td class="text-end">${inr(q.sub)}</td></tr>
+  ${q.pct?`<tr><td class="text-success">Coupon ${code} (${q.pct*100}%)</td><td class="text-end text-success">- ${inr(q.disc)}</td></tr>`:''}
+  <tr><td>Taxes (as configured)</td><td class="text-end">${inr(q.tax)}</td></tr><tr class="t"><td>Total</td><td class="text-end">${inr(q.total)}</td></tr></table>
+  <div class="input-group mt-3"><input class="form-control" id="cp" placeholder="Coupon code" value="${code}" aria-label="Coupon code"><button class="btn btn-line" id="ap" type="button" style="color:var(--moss)">Apply</button></div><div class="small mt-1" id="cm"></div></div>
+  <div class="col-md-6"><form id="gf" novalidate><div class="mb-2"><input class="form-control" placeholder="Full name" required aria-label="Full name"></div><div class="mb-2"><input class="form-control" type="email" placeholder="Email" required aria-label="Email"></div><div class="mb-3"><input class="form-control" type="tel" placeholder="Mobile number" required aria-label="Mobile"></div>
+  <button class="btn btn-lantern w-100" type="submit">Request this stay</button><p class="small text-body-secondary mt-2 mb-0">Payment link follows on confirmation. Free cancellation up to 48 hours before check-in.</p></form></div></div>`;
+  $('#ap').onclick=()=>{const c=$('#cp').value.trim().toUpperCase();if(c&&!COUPONS[c]){$('#cm').textContent='That code is not valid. Check the spelling and try again.';$('#cm').className='small mt-1 text-danger';return}code=c;draw()};
+  $('#gf').onsubmit=e=>{e.preventDefault();const f=e.target;f.classList.add('was-validated');if(!f.checkValidity())return;
+   const ref='WWR-'+Math.floor(10000+Math.random()*89999);
+   $('#bmBody').innerHTML=`<div class="text-center py-4"><h3>Request received</h3><p class="mb-1">Reference <strong>${ref}</strong></p><p class="text-body-secondary">We have sent the details to ${f.elements[1].value}. Our team will confirm availability and share the payment link shortly.</p><button class="btn btn-moss" data-bs-dismiss="modal">Done</button></div>`}};
+ draw();bm.show()}
+$('#barForm').onsubmit=e=>{e.preventDefault();openBook()};
+document.addEventListener('click',e=>{const r=e.target.closest('[data-room]'),o=e.target.closest('[data-open-book]'),c=e.target.closest('[data-copy] button');
+ if(r)openBook(r.dataset.room);if(o)openBook();
+ if(c){const t=c.parentElement.firstChild.textContent.trim();navigator.clipboard?.writeText(t);c.textContent='Copied';setTimeout(()=>c.textContent='Copy',1600)}});
+/* enquiry + toast */
+function toast(m,bad){const t=$('#toast');t.className='toast border-0 text-bg-'+(bad?'danger':'success');$('#toastB').textContent=m;bootstrap.Toast.getOrCreateInstance(t).show()}
+$('#enq').onsubmit=e=>{e.preventDefault();e.target.classList.add('was-validated');if(!e.target.checkValidity())return toast('Please fill in your name, phone and message.',1);e.target.reset();e.target.classList.remove('was-validated');toast('Thank you. We will reply within a day.')};
+})();
+</script>
+</body>
+</html>
